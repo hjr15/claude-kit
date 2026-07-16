@@ -39,7 +39,7 @@ In subagent-driven development the plan-of-record is executable: a task's implem
 
 ## Related
 
-- [[verify-subagent-completion]] — the review gate that surfaces the bug to backport.
-- [[adversarial-plan-review-before-execution]] — catch execution-readiness defects in the plan *before* the first run; this skill closes the loop *after* a run.
+- verify subagent completion — the review gate that surfaces the bug to backport.
+- adversarial plan review before execution — catch execution-readiness defects in the plan *before* the first run; this skill closes the loop *after* a run.
 - `superpowers:subagent-driven-development` — the outer loop whose plan-of-record this keeps authoritative.
-- [[reverify-claimed-state-against-live-source]] — re-check the live tree rather than trusting a prior claim after a re-run.
+- reverify claimed state against live source — re-check the live tree rather than trusting a prior claim after a re-run.

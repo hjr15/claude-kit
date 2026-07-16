@@ -39,8 +39,8 @@ Proceed / proceed-with-changes / reconsider — one line + the one change that m
 2. For each new unit ask: can a consumer understand it without reading its internals, and can the internals change without breaking consumers? If not, the boundary is wrong.
 3. Apply the deletion test — imagine removing the module; does complexity vanish, or reappear smeared across callers?
 4. Judge seams by testability and adapter count. Classify each cross-module dependency by how it gets tested — **in-process** (test directly) / **local-substitutable** (inject a fake — clock, temp dir) / **remote-but-owned** (ports & adapters; own the interface, test to a contract) / **true-external** (mock at the system boundary only). A design that forces mocking deep internals to test it has its boundaries in the wrong place. Respect adapter discipline: an abstraction earns its keep only with **two** real implementations — one adapter is just indirection, so don't add a port for a single concrete dependency (YAGNI — Step 5).
-5. Hunt for over-engineering and cut it (YAGNI) per [[feedback_prefer_simple_solutions]] — bias to the one-file fix over the multi-layer design unless the complexity is earned.
-6. Flag ADR-worthy decisions only when they pass all three tests: hard to reverse, surprising without context, and the result of a real trade-off. Instance config / specific values are NOT ADRs ([[feedback_adr_framework_not_instance]]); durable decisions belong in long-lived docs ([[feedback_promote_decisions_to_longlived_docs]]).
+5. Hunt for over-engineering and cut it (YAGNI) per prefer simple solutions — bias to the one-file fix over the multi-layer design unless the complexity is earned.
+6. Flag ADR-worthy decisions only when they pass all three tests: hard to reverse, surprising without context, and the result of a real trade-off. Instance config / specific values are NOT ADRs (adr framework not instance); durable decisions belong in long-lived docs (promote decisions to longlived docs).
 
 ## Don't
 - Don't implement or edit files — you advise.

@@ -9,7 +9,7 @@ disable-model-invocation: true
 
 ## Overview
 
-A PR you didn't write needs a real merge-test, not just a green-checks glance. Test the merge in an isolated worktree, run the build gate on the result, review the diff's content, confirm it stays in its lane, then report — and re-verify live state first, because an "open" PR can already be merged by a concurrent session ([[reverify-claimed-state-against-live-source]]).
+A PR you didn't write needs a real merge-test, not just a green-checks glance. Test the merge in an isolated worktree, run the build gate on the result, review the diff's content, confirm it stays in its lane, then report — and re-verify live state first, because an "open" PR can already be merged by a concurrent session (reverify claimed state against live source).
 
 ## When to use
 
@@ -17,7 +17,7 @@ A PR you didn't write needs a real merge-test, not just a green-checks glance. T
 - merging a sister session's PR in a multi-lane repo
 - any PR whose diff you haven't authored and must vouch for
 
-Distinct from `multi-pr-sweep-pipeline` (ships YOUR N near-identical PRs) and [[pr-check-rollup-vs-required-gate]] (explains red rollups).
+Distinct from `multi-pr-sweep-pipeline` (ships YOUR N near-identical PRs) and pr check rollup vs required gate (explains red rollups).
 
 ## Steps
 

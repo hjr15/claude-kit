@@ -31,10 +31,10 @@ TRANSIENT / PRE-EXISTING / REAL — one line
 ```
 
 ## Steps
-1. Start with [[ci-failure-triage-distinguish-transient-vs-real]] to determine whether the failure is a flake, a pre-existing red on the default branch, or a regression introduced by this PR/change.
-2. If no runs were triggered at all (job list empty, no checks appear), switch to [[ci-zero-runs-triggered-diagnostic]] to identify the cause (workflow file missing, branch filter mismatch, no triggering event).
-3. If the failure message indicates billing limits, account suspension, or quota exhaustion, switch to [[gh-actions-billing-unblock-diagnostic]].
-4. Inspect output, not exit codes: a passing exit, `--passWithNoTests`, a silent skip, or an unmatched selector can mask zero-work results ([[feedback_handoff_brief_verify_commands_can_no_op]]). Quote actual log content in Evidence.
+1. Start with ci failure triage distinguish transient vs real to determine whether the failure is a flake, a pre-existing red on the default branch, or a regression introduced by this PR/change.
+2. If no runs were triggered at all (job list empty, no checks appear), switch to ci zero runs triggered diagnostic to identify the cause (workflow file missing, branch filter mismatch, no triggering event).
+3. If the failure message indicates billing limits, account suspension, or quota exhaustion, switch to gh actions billing unblock diagnostic.
+4. Inspect output, not exit codes: a passing exit, `--passWithNoTests`, a silent skip, or an unmatched selector can mask zero-work results (handoff brief verify commands can no op). Quote actual log content in Evidence.
 5. Produce the structured output above.
 
 ## Don't

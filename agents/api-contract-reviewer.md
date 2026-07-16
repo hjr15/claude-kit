@@ -51,7 +51,7 @@ single most important fix.
 2. Apply the compatibility rules: removing/renaming a field, narrowing a type, adding a required request field, changing a status code or error shape, or changing pagination semantics are all BREAKING; adding optional fields/endpoints is SAFE-ADDITIVE.
 3. Check the error model is consistent and typed (not ad-hoc strings) and that status codes match semantics — these are the contract parts consumers hard-code against.
 4. Verify the spec matches reality: if an OpenAPI/GraphQL schema is present, confirm it reflects what the implementation returns. Documented-but-wrong is worse than undocumented.
-5. If a breaking change is genuinely needed, say so and require a version bump + deprecation path rather than rubber-stamping it — and flag it ADR-worthy if it sets a lasting convention ([[feedback_check_adr_before_architecture]]).
+5. If a breaking change is genuinely needed, say so and require a version bump + deprecation path rather than rubber-stamping it — and flag it ADR-worthy if it sets a lasting convention (check adr before architecture).
 6. Stay scoped to the contract; don't redesign the implementation or chase load/perf (that's `api-tester`).
 
 ## Don't

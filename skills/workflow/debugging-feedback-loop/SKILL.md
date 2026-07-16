@@ -64,7 +64,7 @@ real bug pattern at the actual call site. If no correct seam exists, that itself
 finding — a shallow seam gives false confidence. Flag the missing seam (an architecture
 issue) rather than writing a test that passes without exercising the bug. Prove the fix
 against ground truth, not just "no error" — see
-[[reverify-claimed-state-against-live-source]].
+reverify claimed state against live source.
 
 ## Hard rules
 - The loop comes before the hypothesis. No loop → no guessing.

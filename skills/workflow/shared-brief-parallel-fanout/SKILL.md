@@ -8,7 +8,7 @@ description: Use when a task splits into N same-shaped units (audit a corpus by 
 
 ## Overview
 
-[[dispatching-parallel-agents]] (superpowers) gives the generic rule: one agent per independent domain, dispatch concurrently, integrate. This skill is the recipe for the *homogeneous* variant — N units of the **same shape** (one per cluster / notebook / subject / transcript) — where the leverage comes from a **single shared brief** plus a **uniform output contract** so the parent can mechanically integrate.
+dispatching parallel agents (superpowers) gives the generic rule: one agent per independent domain, dispatch concurrently, integrate. This skill is the recipe for the *homogeneous* variant — N units of the **same shape** (one per cluster / notebook / subject / transcript) — where the leverage comes from a **single shared brief** plus a **uniform output contract** so the parent can mechanically integrate.
 
 **Core principle:** write the brief once, make every agent read it in full, make every agent emit the same structure, then integrate centrally. Agents do prose judgment; scripts do mechanical or fragile-format edits.
 
@@ -18,7 +18,7 @@ description: Use when a task splits into N same-shaped units (audit a corpus by 
 - Each unit is a bounded "read the brief → do the work → report in the agreed shape" task.
 - You want consistency across the N outputs (same columns, same template, same dedup baseline).
 
-Not this skill: heterogeneous independent failures (use [[dispatching-parallel-agents]] directly); N tasks that each need their own isolated git branch (use [[parallel-worktree-tasks]]); kicking off N *sister sessions* via handoff briefs (use [[parallel-handoff-brief-fanout]]).
+Not this skill: heterogeneous independent failures (use dispatching parallel agents directly); N tasks that each need their own isolated git branch (use parallel worktree tasks); kicking off N *sister sessions* via handoff briefs (use parallel handoff brief fanout).
 
 ## The recipe
 
@@ -78,6 +78,6 @@ Parent collects all N outputs, then:
 
 This skill is the spine; the domain specifics live where the work happens:
 - Diagram-necessity audit of a prose corpus → [[readme-diagram-audit]].
-- N parallel notebook authors from a shared AUTHOR_GUIDE → [[notes-migration]] (and the notebook build flow).
-- Per-subject tagging with a script fallback for fragile JSON → [[notes-migration]].
-- N parallel session-transcript scanners pre-deduped against the slug list → [[session-harvest]].
+- N parallel notebook authors from a shared AUTHOR_GUIDE → notes migration (and the notebook build flow).
+- Per-subject tagging with a script fallback for fragile JSON → notes migration.
+- N parallel session-transcript scanners pre-deduped against the slug list → session harvest.

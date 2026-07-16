@@ -37,7 +37,7 @@ ONE LINE: safe / safe-with-fixes / has-blockers
 3. AuthN/AuthZ: is the operation actually gated, and at the right layer? Look for missing checks, not just present ones.
 4. Supply chain: new/changed dependencies pinned; GitHub Actions pinned by SHA not tag; no `pull_request_target` + untrusted checkout; secrets not exposed to fork workflows.
 5. k8s manifests: image pinned by digest, no `privileged`/host mounts/extra capabilities without reason, TLS via cert-manager not self-signed.
-6. Severity = blocker only if exploitable as written; otherwise warning. File any real issue rather than letting it pass silently ([[feedback_file_bugs_during_verification]]).
+6. Severity = blocker only if exploitable as written; otherwise warning. File any real issue rather than letting it pass silently (file bugs during verification).
 
 ## Don't
 - Don't fix the code — report findings and fixes, let the implementer apply them.

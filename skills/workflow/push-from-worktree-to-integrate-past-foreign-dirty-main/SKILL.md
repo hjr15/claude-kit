@@ -22,7 +22,7 @@ uncommitted work is never at risk.
 
 This is the *positive integration* companion to the two "leave it alone" and
 "recover it" skills:
-- [[dont-touch-sibling-session-unpushed-commit]] — the sibling has an unpushed
+- dont touch sibling session unpushed commit — the sibling has an unpushed
   *commit*; you leave it. Here the sibling has uncommitted *WIP* and you need
   to land your own work around it.
 - [[multi-agent-branch-collision-recovery]] — *your* commit landed on the wrong
@@ -72,7 +72,7 @@ This is the *positive integration* companion to the two "leave it alone" and
   or, if the work is a PR, merge it on the remote (`gh pr merge --admin`
   after CI green) — again, from your worktree, not the shared checkout.
 - Keep every git/gh command prefixed with `cd <your-worktree-abs-path> &&` in
-  a cross-repo / multi-session context (see [[git-command-cross-repo-safety]]).
+  a cross-repo / multi-session context (see git command cross repo safety).
 
 ## If it's a real (non-FF) merge — a throwaway worktree, never the shared tree
 
@@ -106,8 +106,8 @@ merge into it without disturbing the occupied sibling checkout:
 
 ## Related
 
-- [[dont-touch-sibling-session-unpushed-commit]] — the "leave the foreign
+- dont touch sibling session unpushed commit — the "leave the foreign
   commit alone" sibling case.
 - [[multi-agent-branch-collision-recovery]] — recover your own mis-branched commit.
 - [[mid-session-master-advance-rebase]] — origin advanced; rebase your branch first.
-- [[git-command-cross-repo-safety]] — CWD-prefix discipline across repos.
+- git command cross repo safety — CWD-prefix discipline across repos.

@@ -86,5 +86,5 @@ same fan-out mechanism, and it's deterministic-but-easy-to-drop-a-step. The inva
 ## Related
 
 - `scripts/install.sh` — the fan-out mechanism this skill protects.
-- [[dont-touch-sibling-session-unpushed-commit]] — the sister-session hazard
+- dont touch sibling session unpushed commit — the sister-session hazard
   in the same shared-config regime.

@@ -35,8 +35,8 @@ REFUTED / UPHELD / UNPROVEN — one line
 ## Steps
 1. Restate the claim as a falsifiable proposition. If vague ("it works"), pin it to a concrete observable: which input → which output.
 2. Hunt for *disconfirming* evidence first — read the actual output/log/data, not the summary; run the given command yourself; exercise the negative/edge path, not the happy path.
-3. Inspect output, not exit codes: a passing exit, `--passWithNoTests`, a silent skip, or an unmatched selector can mask zero work ([[feedback_handoff_brief_verify_commands_can_no_op]]).
-4. Apply the rollback test where a fix is claimed: would the symptom return if the change were reverted? If you can't tell, it isn't proven ([[feedback_prove_user_facing_goal_before_resolved]]).
+3. Inspect output, not exit codes: a passing exit, `--passWithNoTests`, a silent skip, or an unmatched selector can mask zero work (handoff brief verify commands can no op).
+4. Apply the rollback test where a fix is claimed: would the symptom return if the change were reverted? If you can't tell, it isn't proven (prove user facing goal before resolved).
 5. Distinguish "no error" from "correct result" — absence of errors is not proof of the goal.
 6. Verdict: REFUTED (found a counterexample), UPHELD (positive reproducible evidence), or UNPROVEN (neither — name exactly what's missing).
 

@@ -55,7 +55,7 @@ handling before the flip, because a non-squashed history exposes all of it.
 
 Complements the `public-readiness-audit` agent (which detects tree-level
 secrets/PII but misses commit metadata) and reinforces the
-`feedback_scrub_git_history_not_just_files_for_public` memory. Sibling skill
+scrub git history not just files for public memory. Sibling skill
 `clean-room-reimplement-fork-enhancement-for-upstream-pr` covers the narrower
 case of contributing one enhancement upstream (fresh clone + omit-Claude-trailer)
 rather than flipping a whole repo public.

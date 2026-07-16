@@ -7,7 +7,7 @@ disable-model-invocation: true
 # /recon-swarm — Adaptive Read-Only Scout Swarm
 
 ## Overview
-Reconnaissance before planning: fan out `Explore` agents across the codebase under independent lenses, then synthesize findings into a recon brief. The brief gives [[grill-brainstorm-build]] (and [[solve]]) something to interrogate against reality rather than assumptions.
+Reconnaissance before planning: fan out `Explore` agents across the codebase under independent lenses, then synthesize findings into a recon brief. The brief gives [[grill-brainstorm-build]] (and solve) something to interrogate against reality rather than assumptions.
 
 This skill only reads. It produces no changes.
 
@@ -42,7 +42,7 @@ Scouts are dispatched as `Explore` agents. They **must not mutate the tree** —
 
 ## Dispatch
 
-Fan out in parallel — one `Explore` agent per selected lens — per [[superpowers:dispatching-parallel-agents]].
+Fan out in parallel — one `Explore` agent per selected lens — per dispatching parallel agents.
 
 Each scout receives a scoped brief:
 
@@ -73,4 +73,4 @@ Return a structured brief with these sections:
 ## Related
 
 - [[grill-brainstorm-build]] — consumes the recon brief as grounding context
-- [[solve]] — Stage 0 of the solve lifecycle invokes recon-swarm before planning
+- solve — Stage 0 of the solve lifecycle invokes recon-swarm before planning

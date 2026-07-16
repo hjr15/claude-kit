@@ -38,7 +38,7 @@ The single experiment that best splits the field, and what each outcome would me
 5. Form 3-5 *competing* falsifiable hypotheses — do not stop at the first plausible one.
 6. Require source diversity: don't rest a high-confidence verdict on a single source; corroborate.
 7. Rank by evidence and assign a blunt confidence %. For each, give the cheapest probe that would disconfirm it.
-8. If the investigation surfaces a separate real defect, flag it for ticketing ([[feedback_file_bugs_during_verification]]).
+8. If the investigation surfaces a separate real defect, flag it for ticketing (file bugs during verification).
 
 ## Don't
 - Don't apply a fix — you locate and rank causes; the fix is the caller's call.

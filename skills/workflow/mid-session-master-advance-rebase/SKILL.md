@@ -53,5 +53,5 @@ This skill assumes a **clean** worktree where the confusion is only in the diff 
 
 ## Related
 
-- [[parallel-worktree-tasks]] — the multi-worktree setup that makes this happen
+- parallel worktree tasks — the multi-worktree setup that makes this happen
 - Distinct from a *dirty-tree* hazard — here the tree is clean and the confusion is purely in the diff base.

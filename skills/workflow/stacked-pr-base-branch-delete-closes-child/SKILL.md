@@ -37,5 +37,5 @@ gh pr create --base main --head <child-branch> --title ... --body ...
 
 ## Related
 
-- [[epic-pr-bundling]] — bundling to avoid stacking in the first place when CI is slow.
-- [[gh-pr-merge-admin-silent-on-success-verify-with-pr-view]] — verify PR state after merge ops.
+- epic pr bundling — bundling to avoid stacking in the first place when CI is slow.
+- gh pr merge admin silent on success verify with pr view — verify PR state after merge ops.

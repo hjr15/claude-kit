@@ -27,7 +27,7 @@ organisation, a service boundary, or "what's the right shape for X?".
 ## When to Use
 - **Standalone:** "how should I structure the X feature?", "review this design
   before I build it", "is this the right service boundary?".
-- **As the design stage inside execution:** before [[superpowers:writing-plans]]
+- **As the design stage inside execution:** before writing plans
   turns a spec into tasks, or mid-flight when an approach needs a sanity check.
   Feeds the agreed design into the plan.
 - Whenever a change is hard-to-reverse or sets a lasting convention — the council
@@ -44,7 +44,7 @@ council for a function rename).
 
 ## Phase 2 — Perspectives (parallel, advisory)
 Dispatch the relevant agents **in parallel** per
-[[superpowers:dispatching-parallel-agents]] against the same scoped design:
+dispatching parallel agents against the same scoped design:
 - `architect` always (the independent judgement + ADR radar).
 - `code-architect` when structure/organisation is in question.
 - `backend-architect` when server/system design is in question.
@@ -58,19 +58,19 @@ All are read-only/advisory. Discard any code they sketch; keep it as a proposal.
 ## Phase 3 — Synthesize & Approve (the gate)
 In your own session: reconcile the perspectives (they will sometimes disagree —
 that's the point), pick the design, and bias to the **simpler alternative** per
-[[feedback_prefer_simple_solutions]]. Present it to the user with the trade-offs.
+prefer simple solutions. Present it to the user with the trade-offs.
 
 **Capture ADRs here.** Anything that clears all three bars — hard to reverse,
 surprising without context, a real trade-off — becomes an ADR per
-[[feedback_check_adr_before_architecture]] and [[feedback_app_design_decision_needs_adr]].
+check adr before architecture and app design decision needs adr.
 Don't manufacture an ADR for routine choices; instance config is not an ADR
-([[feedback_adr_framework_not_instance]]). Durable decisions also belong in
-long-lived docs ([[feedback_promote_decisions_to_longlived_docs]]).
+(adr framework not instance). Durable decisions also belong in
+long-lived docs (promote decisions to longlived docs).
 
 ## Phase 4 — Implement (separate, approved step)
 Hand the agreed design to the right executor — `backend-architect` for server
-work, [[frontend-team]] for UI, [[api-team]] for API surfaces, or
-[[superpowers:subagent-driven-development]] for general tasks. Follow the repo's
+work, frontend team for UI, api team for API surfaces, or
+subagent driven development for general tasks. Follow the repo's
 process bar (branch + per-commit Jira key, `code-review`, `context7`).
 
 ## Phase 5 — Verify
@@ -89,5 +89,5 @@ built shape matches the agreed design (drift between design and build is common)
 
 ## Related
 - [[recon-swarm]] — maps the surfaces the council designs against
-- [[frontend-team]] / [[api-team]] — the execution units the agreed design hands to
+- frontend team / api team — the execution units the agreed design hands to
 - [[adversarial-verifier]] — verify high-stakes structural claims
