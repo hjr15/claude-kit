@@ -1,6 +1,7 @@
 ---
 name: ai-engineer
 public: true
+bundles: [ai]
 description: Practical ML/AI implementation specialist — LLM integration, RAG, recommendation/vision systems, model serving, and cost-optimised inference. Builds production-grade intelligent features from a spec for any AI stack.
 model: sonnet
 ---

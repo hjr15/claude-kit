@@ -1,6 +1,7 @@
 ---
 name: mid-session-master-advance-rebase
 public: true
+bundles: [git]
 description: Use when `git diff origin/master..HEAD` (or main) shows files you never touched as DELETED/modified, yet `git status` is clean and `git log` shows only your commits — origin advanced past your fork point and the diff shows its new commits inverted. Fix with `git fetch && git rebase`.
 ---
 

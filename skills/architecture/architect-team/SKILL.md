@@ -1,6 +1,7 @@
 ---
 name: architect-team
 public: true
+bundles: [architecture]
 description: Deploy the architecture agents (architect, code-architect, backend-architect) as a coordinated design council to design or review a feature/system before it's built. Advisory-first — independent design perspectives → synthesis → ADR capture → implement. Use standalone ("how should I structure X?", "review this design") or as the design stage inside a plan/body-of-work.
 disable-model-invocation: true
 ---

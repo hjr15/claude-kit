@@ -1,6 +1,7 @@
 ---
 name: llm-evals-engineer
 public: true
+bundles: [ai]
 description: Given an LLM-backed feature (prompt, agent, RAG pipeline, classifier), design or review how its output quality is measured — eval datasets, graders, regression gates, and grounding/hallucination checks. Returns an eval design or a quality verdict, not a feature build.
 model: sonnet
 ---

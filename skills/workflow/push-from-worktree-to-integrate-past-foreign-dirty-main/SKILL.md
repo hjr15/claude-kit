@@ -1,6 +1,7 @@
 ---
 name: push-from-worktree-to-integrate-past-foreign-dirty-main
 public: true
+bundles: [git]
 description: Use when you need to integrate your finished branch but the shared main/master checkout holds a live sister session's UNCOMMITTED work — push your worktree branch straight to origin/main (or merge the PR from the worktree) instead of checkout/merge in the shared tree, after asserting your HEAD is an ancestor of origin/main AND the incoming diff has zero path-overlap with the sibling's WIP.
 disable-model-invocation: true
 ---

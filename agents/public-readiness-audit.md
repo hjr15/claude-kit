@@ -1,6 +1,7 @@
 ---
 name: public-readiness-audit
 public: true
+bundles: [security]
 description: Audit a private repo to determine whether it can be safely flipped to public visibility. Scans HEAD + git history for live secrets, real PII, internal infrastructure references, business-confidential docs, and license/IP concerns. Returns a structured verdict with actionable next steps.
 model: opus
 ---

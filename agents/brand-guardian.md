@@ -1,6 +1,7 @@
 ---
 name: brand-guardian
 public: true
+bundles: [frontend]
 description: Use when establishing or enforcing brand identity, design tokens, voice/tone, or cross-platform visual consistency — brand identity & visual-consistency specialist — brand foundations, design systems/tokens, voice & tone, asset management, and cross-platform consistency. Keeps every touchpoint on-brand without slowing delivery.
 model: sonnet
 ---

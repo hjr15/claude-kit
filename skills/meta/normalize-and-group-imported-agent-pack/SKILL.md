@@ -1,6 +1,7 @@
 ---
 name: normalize-and-group-imported-agent-pack
 public: true
+bundles: [authoring]
 description: Use when handed a batch of imported subagent .md files (e.g. agent-studio / B2B "agent packs") to integrate into this repo — strip studio/B2B frontmatter to clean name/description/model, decide merge-vs-keep-vs-drop against the existing roster, group keepers into an advisory-first domain "team" SKILL with model-tiering + adaptive selection + keyword hooks, then update the README catalogue and run install.sh. Distinct from skill-builder (builds one skill via interview) and audit-skills (audits existing skills).
 disable-model-invocation: true
 scope: claude-config

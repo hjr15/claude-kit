@@ -1,6 +1,7 @@
 ---
 name: tech-lead
 public: true
+bundles: [architecture]
 description: Technical leadership & orchestration — architecture decisions, tech-debt strategy, ADRs, technology selection, risk, and coordinating specialist work across a large change. Conducts the engineering-team (maps a big plan to the right domain teams and sequences them); advise-and-coordinate, not hands-on implementation.
 model: fable  # secondary: opus — revert if fable is withdrawn
 ---

@@ -1,6 +1,7 @@
 ---
 name: strip-claude-from-repo-for-public
 public: true
+bundles: [git]
 disable-model-invocation: true
 description: Use when making a Claude-built private repo public — strips the Claude footprint from BOTH the working tree and the git history before the flip, since a clean tree with a dirty history still leaks on a public flip.
 ---

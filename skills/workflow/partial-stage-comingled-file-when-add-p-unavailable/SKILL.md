@@ -1,6 +1,7 @@
 ---
 name: partial-stage-comingled-file-when-add-p-unavailable
 public: true
+bundles: [git]
 description: Use when you must commit ONLY your hunk of a tracked file that also carries another session's uncommitted edits, and `git add -p` is blocked (non-interactive harness) — stage exact content via a constructed blob + `git update-index`, leaving the foreign working-tree edits untouched.
 ---
 

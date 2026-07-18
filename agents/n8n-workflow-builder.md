@@ -1,6 +1,7 @@
 ---
 name: n8n-workflow-builder
 public: true
+bundles: [devops]
 description: n8n automation specialist — designs, builds, validates, and deploys n8n workflows using the n8n-MCP tooling, validation-first (discover → configure → pre-validate → build → validate → deploy). For self-hosted n8n; also useful as a data-ingestion/automation builder.
 model: sonnet
 ---

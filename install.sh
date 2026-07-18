@@ -6,27 +6,87 @@
 # them. That is all it does: no settings merge, no memory, no hooks.
 #
 # Usage:
-#   bash install.sh            # install (idempotent — safe to re-run)
-#   bash install.sh --check    # report drift, write nothing, exit 1 if drifted
+#   bash install.sh                    # install (idempotent — safe to re-run)
+#   bash install.sh --check            # report drift, write nothing, exit 1 if drifted
+#   bash install.sh --list             # print available bundles, write nothing
+#   bash install.sh --bundle a,b       # install only items in bundle a or b
 #
 # Symlinks, not copies: `git pull` then takes effect immediately, with no
 # reinstall step.
 
 set -euo pipefail
 
-CHECK_MODE=0
-if [[ "${1:-}" == "--check" ]]; then
-  CHECK_MODE=1
-elif [[ -n "${1:-}" ]]; then
-  echo "Unknown argument: $1 (only --check is supported)" >&2
-  exit 2
-fi
-
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILLS_SRC="$REPO_DIR/skills"
 AGENTS_SRC="$REPO_DIR/agents"
 SKILLS_TARGET="$HOME/.claude/skills"
 AGENTS_TARGET="$HOME/.claude/agents"
+MANIFEST="$REPO_DIR/bundles.tsv"
+
+# ── Argument parsing (order-independent) ────────────────────────────────
+#
+# --check          report drift, write nothing
+# --list           print available bundles, write nothing
+# --bundle a,b     restrict to items whose bundle set intersects the request
+#
+# A real while-loop over "$@" so any combination/order works — e.g.
+# `--bundle git --check` and `--check --bundle git` are equivalent, and
+# `--bundle` filters `--check` no matter which flag comes first.
+CHECK_MODE=0
+LIST_MODE=0
+BUNDLE_FILTER=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --check)
+      CHECK_MODE=1
+      shift
+      ;;
+    --list)
+      LIST_MODE=1
+      shift
+      ;;
+    --bundle)
+      [[ -n "${2:-}" ]] || { echo "--bundle needs a comma-separated list" >&2; exit 2; }
+      BUNDLE_FILTER="$2"
+      shift 2
+      ;;
+    *)
+      echo "Unknown argument: $1 (supported: --check, --list, --bundle <name>[,<name>])" >&2
+      exit 2
+      ;;
+  esac
+done
+
+if [[ -n "$BUNDLE_FILTER" ]]; then
+  [[ -f "$MANIFEST" ]] || { echo "no bundles.tsv in this kit" >&2; exit 2; }
+  # validate every requested bundle exists
+  valid=$(cut -f3 "$MANIFEST" | tr ',' '\n' | sed '/^$/d' | sort -u)
+  IFS=',' read -ra req <<< "$BUNDLE_FILTER"
+  for r in "${req[@]}"; do
+    grep -qx "$r" <<< "$valid" || { echo "unknown bundle: $r" >&2; echo "valid: $(tr '\n' ' ' <<< "$valid")" >&2; exit 2; }
+  done
+fi
+
+if [[ $LIST_MODE -eq 1 ]]; then
+  [[ -f "$MANIFEST" ]] || { echo "no bundles.tsv in this kit" >&2; exit 2; }
+  echo "Available bundles (install with: bash install.sh --bundle <name>[,<name>]):"
+  cut -f3 "$MANIFEST" | tr ',' '\n' | sed '/^$/d' | sort -u | while read -r b; do
+    n=$(awk -F'\t' -v b="$b" '{split($3,a,","); for(i in a) if(a[i]==b) c++} END{print c+0}' "$MANIFEST")
+    printf '  %-14s %s item(s)\n' "$b" "$n"
+  done
+  exit 0
+fi
+
+# in_selected_bundle NAME — true when no --bundle filter is active, or NAME
+# shares at least one bundle with the request.
+in_selected_bundle() {
+  [[ -z "$BUNDLE_FILTER" ]] && return 0
+  local row; row=$(awk -F'\t' -v n="$1" '$1==n{print $3}' "$MANIFEST")
+  IFS=',' read -ra want <<< "$BUNDLE_FILTER"
+  IFS=',' read -ra have <<< "$row"
+  for w in "${want[@]}"; do for h in "${have[@]}"; do [[ "$w" == "$h" ]] && return 0; done; done
+  return 1
+}
 
 drift=0
 note() {
@@ -67,10 +127,12 @@ each_agent() {
 run_check() {
   local name src
   while IFS=$'\t' read -r name src; do
+    in_selected_bundle "$name" || continue
     is_linked "$SKILLS_TARGET/$name" "$src" || note "skill '$name' not linked in $SKILLS_TARGET"
   done < <(each_skill)
 
   while IFS=$'\t' read -r name src; do
+    in_selected_bundle "${name%.md}" || continue
     is_linked "$AGENTS_TARGET/$name" "$src" || note "agent '$name' not linked in $AGENTS_TARGET"
   done < <(each_agent)
 
@@ -105,9 +167,11 @@ check_conflict() {
 }
 
 while IFS=$'\t' read -r name _src; do
+  in_selected_bundle "$name" || continue
   check_conflict "$SKILLS_TARGET/$name"
 done < <(each_skill)
 while IFS=$'\t' read -r name _src; do
+  in_selected_bundle "${name%.md}" || continue
   check_conflict "$AGENTS_TARGET/$name"
 done < <(each_agent)
 
@@ -123,6 +187,7 @@ mkdir -p "$SKILLS_TARGET" "$AGENTS_TARGET"
 
 skills_n=0
 while IFS=$'\t' read -r name src; do
+  in_selected_bundle "$name" || continue
   # -n so an existing symlink-to-a-directory is REPLACED rather than being
   # followed and nested inside itself; -f so a stale link is overwritten.
   ln -sfn "$src" "$SKILLS_TARGET/$name"
@@ -131,6 +196,7 @@ done < <(each_skill)
 
 agents_n=0
 while IFS=$'\t' read -r name src; do
+  in_selected_bundle "${name%.md}" || continue
   ln -sfn "$src" "$AGENTS_TARGET/$name"
   agents_n=$((agents_n + 1))
 done < <(each_agent)

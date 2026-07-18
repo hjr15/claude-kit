@@ -1,6 +1,7 @@
 ---
 name: stacked-pr-base-branch-delete-closes-child
 public: true
+bundles: [git]
 description: Use before merging a base PR with `--delete-branch` when another (stacked) PR targets that base branch — deleting the base CLOSES the stacked child (GitHub won't retarget it to main) and it can't be reopened once the base is gone; retarget the child first, or open a fresh PR from the same head.
 ---
 

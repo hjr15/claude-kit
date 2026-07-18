@@ -1,6 +1,7 @@
 ---
 name: deep-investigator
 public: true
+bundles: [multi-agent]
 description: For a cryptic bug or unexplained behaviour, run a multi-source, hypothesis-driven investigation (exact-error search, known-issue/changelog/Context7 lookup, code tracing) and return ranked root-cause hypotheses with confidence and the cheapest next probe for each. Investigates; does not fix.
 model: fable  # secondary: opus — revert if fable is withdrawn
 ---

@@ -1,6 +1,7 @@
 ---
 name: performance-engineer
 public: true
+bundles: [code, mobile]
 description: Performance & efficiency specialist — profiling, bottleneck analysis, algorithm/memory optimisation, query tuning, caching, and frontend rendering/load performance. Measures first, optimises what matters, and avoids premature optimisation. Cross-cutting; composes with backend, frontend, and testing teams.
 model: sonnet
 ---

@@ -1,6 +1,7 @@
 ---
 name: ci-triage
 public: true
+bundles: [devops]
 description: Given a failing CI run or red PR check, classify it as transient / pre-existing / real and recommend the action — by applying the repo's CI-triage playbooks in an isolated context. Returns a verdict, not a fix.
 model: opus
 ---

@@ -1,6 +1,7 @@
 ---
 name: frontend-developer
 public: true
+bundles: [frontend, mobile]
 description: Use when implementing UI from a design or spec — building components, responsive layouts, state management, or frontend performance/accessibility work — elite frontend implementation specialist — modern JS frameworks (React, Vue, Angular, Svelte, Next.js), responsive design, performance, accessibility, and state management. Builds production-grade, maintainable UI from a design or spec for any frontend stack.
 model: sonnet
 ---

@@ -1,6 +1,7 @@
 ---
 name: recon-swarm
 public: true
+bundles: [multi-agent]
 description: Use before planning a non-trivial change to map the affected surfaces — dispatches read-only scout agents in parallel under chosen lenses and returns a synthesized recon brief. Triggers on "recon", "scout this", "map the surfaces before we plan".
 disable-model-invocation: true
 ---

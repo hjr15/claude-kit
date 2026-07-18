@@ -1,6 +1,7 @@
 ---
 name: stacked-pr-for-review-split
 public: true
+bundles: [git]
 description: Use when a user asks to review changes that are already committed inside an open PR, and you cannot (or should not) force-push the PR's history. Produces a non-destructive stacked PR carrying only the diff the user wants to review.
 disable-model-invocation: true
 ---

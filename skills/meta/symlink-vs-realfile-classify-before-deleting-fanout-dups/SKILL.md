@@ -1,6 +1,7 @@
 ---
 name: symlink-vs-realfile-classify-before-deleting-fanout-dups
 public: true
+bundles: [authoring]
 description: Use during a memory/skill/config dedup on a symlink-fanned tree (like claude-config, where install.sh symlinks universal cards into per-project dirs and ~/.claude) — before deleting any "duplicate", run a `test -L` classification loop so you delete only genuine real-file dups (often a sister session's copy) and KEEP the session's own install.sh fan-out symlinks. Guards against a near-miss deleting your own fan-out.
 disable-model-invocation: true
 scope: claude-config

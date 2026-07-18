@@ -1,6 +1,7 @@
 ---
 name: api-tester
 public: true
+bundles: [api]
 description: Comprehensive API testing specialist — performance/load profiling, contract validation (OpenAPI), integration, chaos, and basic security testing. Finds breaking points and contract drift before deploy, for any API stack.
 model: sonnet
 ---

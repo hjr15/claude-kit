@@ -1,6 +1,7 @@
 ---
 name: mcp-overflow-delegate-summary
 public: true
+bundles: [authoring]
 description: Use when an MCP tool result is dumped to a tool-results/*.txt file because it exceeded the token cap — delegate the read+summarize to a general-purpose subagent (or jq the file for targeted extraction) so the raw payload stays out of the main context.
 ---
 

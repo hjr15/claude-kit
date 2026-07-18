@@ -1,6 +1,7 @@
 ---
 name: generator-oracle-zero-diff-verify
 public: true
+bundles: [debugging]
 description: Use when building a code-generator, sanitizer, or export pipeline whose output already exists as a hand-maintained artifact — make zero-git-diff against that existing artifact the acceptance test, instead of hand-deriving a per-file classification.
 ---
 

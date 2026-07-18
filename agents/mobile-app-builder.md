@@ -1,6 +1,7 @@
 ---
 name: mobile-app-builder
 public: true
+bundles: [mobile]
 description: Mobile app developer — native iOS (Swift/SwiftUI) & Android (Kotlin/Compose) and cross-platform (React Native, Flutter, Expo); 60fps UI, platform integration (push, biometrics, deep links, camera), offline-first, and app-store readiness. Builds native-feeling mobile experiences for the planned web+mobile package.
 model: sonnet
 ---

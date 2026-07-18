@@ -1,6 +1,7 @@
 ---
 name: shared-brief-parallel-fanout
 public: true
+bundles: [multi-agent]
 description: Use when a task splits into N same-shaped units (audit a corpus by cluster, author N notebooks, tag N subjects, scan N transcripts) and you fan out parallel agents from ONE shared brief — the brief artifact, uniform output contract, agent-vs-script split, and central integration.
 ---
 

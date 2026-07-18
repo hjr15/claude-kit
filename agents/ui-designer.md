@@ -1,6 +1,7 @@
 ---
 name: ui-designer
 public: true
+bundles: [frontend, mobile]
 description: Visionary UI design specialist for general UI and visual design — visual hierarchy, typography, color systems, design tokens, component states, platform conventions, responsive/mobile-first layouts, and implementation-ready specs for any frontend. Use for designing or styling a UI from scratch and overall visual direction. For mobile-FIRST optimization of an existing component or flow (touch targets, native mobile UX, mobile usability standards), use mobile-ux-optimizer instead.
 model: sonnet
 ---

@@ -1,6 +1,7 @@
 ---
 name: multi-agent-branch-collision-recovery
 public: true
+bundles: [multi-agent]
 description: Use when a commit landed on the wrong branch because a parallel agent shifted the active branch in a shared working directory. Recovers by cherry-picking onto the correct branch and resetting the wrong branch's ref without destructive force-push.
 disable-model-invocation: true
 ---

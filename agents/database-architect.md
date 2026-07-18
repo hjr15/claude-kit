@@ -1,6 +1,7 @@
 ---
 name: database-architect
 public: true
+bundles: [architecture]
 description: Database design & optimisation specialist — schema modelling (SQL/NoSQL), indexing strategy, query optimisation, migrations, transactions/ACID, and data integrity. Designs and tunes the data layer; composes with backend-architect for deep DB work.
 model: opus
 ---

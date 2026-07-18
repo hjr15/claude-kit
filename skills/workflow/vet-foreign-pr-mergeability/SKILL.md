@@ -1,6 +1,7 @@
 ---
 name: vet-foreign-pr-mergeability
 public: true
+bundles: [git]
 description: Use when asked to investigate whether an open PR you didn't author (often a sister session's) can be merged — runs a throwaway-worktree merge-test + build gate + parallel content-review + scope-confine check before giving a merge verdict, then tears the worktree down. Not for shipping your own PRs (use multi-pr-sweep) or explaining a red rollup (use pr-check-rollup-vs-required-gate).
 disable-model-invocation: true
 ---

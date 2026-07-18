@@ -1,6 +1,7 @@
 ---
 name: ghcr-first-push-403-seed-and-link
 public: true
+bundles: [devops]
 description: Use when a CI build succeeds but the GHCR push fails 403 Forbidden for a service whose package never existed, on a personal (non-org) account. Default GITHUB_TOKEN can push to existing packages but can't create one on first push. Gives the seed-and-link remediation.
 disable-model-invocation: true  # audit 2026-06-12: primary action pushes images to a registry + edits package settings
 ---

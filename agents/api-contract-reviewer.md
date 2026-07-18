@@ -1,6 +1,7 @@
 ---
 name: api-contract-reviewer
 public: true
+bundles: [api]
 description: Given a proposed or changed API contract (REST endpoints, GraphQL schema, OpenAPI spec, event payloads), review it for design quality, consistency, and — critically — breaking changes against the current contract. Returns a review with a breaking/safe verdict, not an implementation.
 model: opus
 ---

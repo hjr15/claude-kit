@@ -1,6 +1,7 @@
 ---
 name: security-reviewer
 public: true
+bundles: [security]
 description: Adversarial security review of a change, PR, or set of manifests — threat-models the diff for injection, auth/secret-handling, supply-chain, CI-workflow, and k8s-manifest risks. Returns findings by severity with fixes. Complements (not duplicates) the public-readiness-audit agent and the /security-review skill.
 model: fable  # secondary: opus — revert if fable is withdrawn
 ---

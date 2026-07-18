@@ -1,6 +1,7 @@
 ---
 name: backport-review-fix-into-plan-of-record
 public: true
+bundles: [git]
 description: Use when a per-task review during subagent-driven development catches and fixes a real bug in code that a plan-of-record authored — edit the plan itself to carry the fix, so a future plan re-run doesn't reinstate the same bug on top of the corrected tree.
 ---
 

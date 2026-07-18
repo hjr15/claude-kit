@@ -1,6 +1,7 @@
 ---
 name: remote-branch-graveyard-sweep
 public: true
+bundles: [git]
 description: Use to bulk-clean stale remote branches ("clean up the branches" / "make sure the repo is clean") — classify each with git cherry (all-minus = merged), and for any branch with unmerged commits, verify its unique artifact already exists on main BEFORE deleting, since work is often superseded (reimplemented under new SHAs) rather than literally merged.
 disable-model-invocation: true
 ---

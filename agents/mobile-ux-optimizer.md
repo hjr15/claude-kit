@@ -1,6 +1,7 @@
 ---
 name: mobile-ux-optimizer
 public: true
+bundles: [frontend, mobile]
 description: Use this agent for mobile-FIRST optimization of an EXISTING component or flow — touch targets, thumb-zone/one-handed layout, native mobile UX patterns, and mobile usability standards (WCAG, 44px targets). Takes a component that already exists and makes it work well on mobile. NOT for general/visual UI design or building UI from scratch — use ui-designer for that (it also covers responsive layouts). Examples: <example>Context: User has a desktop-focused component that breaks on mobile. user: 'I've built this navigation component but it's not working well on mobile devices' assistant: 'Let me use the mobile-ux-optimizer agent to optimize this existing component for a mobile-first experience' <commentary>An existing component needs mobile-specific optimization, so use mobile-ux-optimizer.</commentary></example> <example>Context: User wants an existing checkout flow made usable one-handed. user: 'Our checkout flow is hard to use on phones — too much scrolling and the buttons are tiny' assistant: 'I'll use the mobile-ux-optimizer agent to improve touch targets and thumb-reach in the existing checkout flow' <commentary>Mobile usability optimization of an existing flow is this agent's lane.</commentary></example>
 model: sonnet
 ---

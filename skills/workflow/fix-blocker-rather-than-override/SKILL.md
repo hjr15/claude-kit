@@ -1,6 +1,7 @@
 ---
 name: fix-blocker-rather-than-override
 public: true
+bundles: [git]
 description: Use when a pre-existing master CI gate is red and blocking your unrelated PR — decide between fix-the-blocker (compounds across all PRs) and admin-override (one-PR value + habit-debt)
 ---
 

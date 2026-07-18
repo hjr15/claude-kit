@@ -1,6 +1,7 @@
 ---
 name: code-architect
 public: true
+bundles: [architecture, code]
 description: Use this agent for project layout and code organization — scalable folder/directory structures, module organization, component hierarchy, and "where does this file/feature go" conventions. NOT for design review (use architect) or server/data design (use backend-architect). Examples: user: 'How should I organize my e-commerce product catalog feature?' -> assistant: 'Let me use the code-architect agent to design a scalable folder structure for your product catalog' -> <uses agent>. Another example: user: 'Where should these new auth files live and how should the module be laid out?' -> assistant: 'I'll use the code-architect agent to design the folder structure and module organization' -> <uses agent>.
 model: opus
 ---

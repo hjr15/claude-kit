@@ -1,6 +1,7 @@
 ---
 name: readme-diagram-audit
 public: true
+bundles: [authoring]
 description: Use when auditing a repo for diagram coverage and convention compliance — scans docs/diagrams/ for completeness, validates frontmatter against the taxonomy, and flags missing diagrams the repo would benefit from. Triggers on "audit diagrams", "check diagram coverage", "visual documentation audit".
 disable-model-invocation: true
 ---

@@ -1,6 +1,7 @@
 ---
 name: doc-accuracy-audit
 public: true
+bundles: [authoring]
 disable-model-invocation: true
 description: Use when asked to validate that a repo's READMEs and docs are accurate / up to date against the current code (not just diagrams — endpoints, ports, counts, env vars, commands, schemas, event contracts). Triggers on "validate the docs against the code", "make sure the docs are up to date", "audit the READMEs for accuracy", "are the docs still correct".
 ---

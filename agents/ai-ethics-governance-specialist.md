@@ -1,6 +1,7 @@
 ---
 name: ai-ethics-governance-specialist
 public: true
+bundles: [ai]
 description: Responsible-AI specialist — bias detection, fairness metrics, explainability (SHAP/LIME), AI governance and risk frameworks, and regulatory alignment (EU AI Act, financial/credit, privacy). Advisory; keeps AI in-scope, auditable, and human-overseen.
 model: sonnet
 ---

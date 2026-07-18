@@ -1,6 +1,7 @@
 ---
 name: skill-builder
 public: true
+bundles: [authoring]
 description: Use when creating a new skill from scratch — runs a discovery interview then builds the SKILL.md in the right category/format. For auditing existing skills use audit-skills instead.
 disable-model-invocation: true
 ---

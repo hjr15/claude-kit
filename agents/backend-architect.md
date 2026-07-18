@@ -1,6 +1,7 @@
 ---
 name: backend-architect
 public: true
+bundles: [architecture]
 description: Server-side architecture specialist — API design, database modelling/optimisation, system design (microservices/serverless/event-driven), auth/security, performance, and deployability. Designs and implements robust backend services for any stack.
 model: opus
 ---

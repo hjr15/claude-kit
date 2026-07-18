@@ -1,7 +1,8 @@
 ---
 name: code-team
 public: true
-description: Deploy the code-quality agents (code-quality-reviewer, code-architect) alongside the /code-review skill to answer "is this code well-built?" — clean code, SOLID, structure, maintainability, refactoring. Advisory-first. Use standalone ("review this module's quality", "how should this be structured?", "is this refactor sound?") or as the quality lane inside a plan/body-of-work. Pairs with the testing-team for "is it proven correct?".
+bundles: [code]
+description: Deploy the code-quality agents (code-quality-reviewer, code-architect) alongside the /code-review skill to answer "is this code well-built?" — clean code, SOLID, structure, maintainability, refactoring. Advisory-first. Use standalone ("review this module's quality", "how should this be structured?", "is this refactor sound?") or as the quality lane inside a plan/body-of-work. Complements test/correctness review for "is it proven correct?".
 disable-model-invocation: true
 ---
 # /code-team — "Is this code well-built?"

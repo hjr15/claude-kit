@@ -1,6 +1,7 @@
 ---
 name: debugging-feedback-loop
 public: true
+bundles: [debugging]
 description: Use when debugging a bug you can't yet reproduce reliably, or when you need a tight/automated reproduction loop before hypothesising — especially non-deterministic or flaky bugs. Complements superpowers:systematic-debugging (which says reproduce; this is HOW to build the loop).
 ---
 

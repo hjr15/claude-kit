@@ -1,6 +1,7 @@
 ---
 name: api-integration-specialist
 public: true
+bundles: [api]
 description: Internal API architecture & developer-experience specialist — REST/GraphQL/gRPC design, OpenAPI docs, SDKs, versioning, caching/performance, auth, and service-to-service communication. Builds APIs that are reliable to consume and evolve.
 model: sonnet
 ---

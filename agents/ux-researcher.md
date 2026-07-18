@@ -1,6 +1,7 @@
 ---
 name: ux-researcher
 public: true
+bundles: [frontend, mobile]
 description: Empathetic UX research specialist — lean research methods, heuristic evaluation, journey mapping, usability testing, behavioral analysis, persona development, and synthesis that turns user behavior into actionable design decisions for any product.
 model: sonnet
 ---

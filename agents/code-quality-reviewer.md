@@ -1,6 +1,7 @@
 ---
 name: code-quality-reviewer
 public: true
+bundles: [code]
 description: Code-quality & clean-code reviewer — readability, SOLID, design patterns, code smells, complexity, DRY, and long-term maintainability with concrete refactoring guidance. Advisory; complements the diff-focused /code-review skill (which hunts correctness bugs).
 model: opus
 ---

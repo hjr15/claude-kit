@@ -1,6 +1,7 @@
 ---
 name: adversarial-verifier
 public: true
+bundles: [multi-agent, architecture, code]
 description: Given a claim, finding, or "it works / it's fixed / it's done" assertion, try to REFUTE it. Returns a refuted/upheld/unproven verdict with the evidence actually checked, the holes that remain, and the positive + rollback test that would settle it.
 model: fable  # secondary: opus — revert if fable is withdrawn
 ---

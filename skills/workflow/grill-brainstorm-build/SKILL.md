@@ -1,6 +1,7 @@
 ---
 name: grill-brainstorm-build
 public: true
+bundles: [devops]
 description: Use when the user wants to go from a rough idea to implementation, running through interrogation, options exploration, and build in one flow. Triggers on "grill me then build", "design-to-build", or "think it through then implement".
 disable-model-invocation: true
 ---

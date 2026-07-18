@@ -1,6 +1,7 @@
 ---
 name: mobile-team
 public: true
+bundles: [mobile]
 description: Deploy the mobile agents (mobile-app-builder, mobile-ux-optimizer) — with ui-designer/ux-researcher/frontend-developer on call — to design and build native or cross-platform mobile apps. Advisory-first for UX, build-and-verify for the app. Use standalone ("build the iOS app", "optimise this screen for mobile") or as the mobile lane inside a plan. Nascent — a growth area for the planned web+mobile package.
 disable-model-invocation: true
 ---

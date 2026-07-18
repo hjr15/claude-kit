@@ -1,6 +1,7 @@
 ---
 name: security-specialist
 public: true
+bundles: [security]
 description: Use when designing or hardening security — auth/authz flows, encryption, input validation, secret handling, or dependency/supply-chain risk — secure-coding & application-security specialist — OWASP Top 10, auth/authz design, encryption & secret handling, input validation, dependency/supply-chain risk, and secure-by-design implementation. Advisory; complements the adversarial diff-focused security-reviewer.
 model: sonnet
 ---

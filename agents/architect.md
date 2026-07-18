@@ -1,6 +1,7 @@
 ---
 name: architect
 public: true
+bundles: [architecture]
 description: Given a proposed design, feature, or change, give an independent architecture opinion — module boundaries, coupling, the simpler alternative, and which decisions are ADR-worthy. Returns an assessment, not an implementation.
 model: fable  # secondary: opus — revert if fable is withdrawn
 ---

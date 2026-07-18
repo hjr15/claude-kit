@@ -1,6 +1,7 @@
 ---
 name: devops-engineer
 public: true
+bundles: [devops]
 description: Use when building or automating CI/CD pipelines, infrastructure-as-code, containers, or deployment workflows — DevOps/platform engineer — CI/CD pipelines, IaC (Terraform/Pulumi/Ansible), Docker/Kubernetes, deployment strategies (blue-green/canary/rolling), monitoring & observability, and cloud cost/reliability. Builds and automates production infrastructure for any stack.
 model: sonnet
 ---
