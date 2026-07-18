@@ -66,6 +66,13 @@ Exit 0 is necessary, not sufficient. Interrogate *how* the green was reached:
   into a *fresh* dir (`git archive origin/main | tar -x`) before trusting any
   verdict — a persisted golden rots silently.
 
+## Scan the assembled output, not the source
+
+The leak/safety gate must run against the **built tree**, not the source diff.
+The generator or overlay step can itself introduce a leak that appears in no
+source file — an inlined value, a templated path, a vendored fixture. Audit what
+will actually ship, not what went in.
+
 ## Merge conflicts in the generated output
 
 Never hand-merge a generated index/hub. If a sibling lane regenerated the same
