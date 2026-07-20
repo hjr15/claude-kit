@@ -141,7 +141,7 @@ Reference these from SKILL.md so Claude knows they exist and when to load them.
   is `meta/`, `workflow/`, `docs/`, or `frontend/`. Use this for anything Claude should
   invoke on its own. No manual registry — discovery is automatic.
 - **Format B (flat playbook):** `skills/<namespace>/<name>.md`, loaded only when
-  `@`-referenced (e.g. the `atlassian/` jira-* family). Use for reference playbooks.
+  `@`-referenced (e.g. the `superpowers/` namespace). Use for reference playbooks.
 
 There is no CLAUDE.md "Active Skills" registry and no decision log to update — the
 deploy step (`scripts/install.sh`) fans skills out to `~/.claude/`.
