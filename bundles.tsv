@@ -10,7 +10,6 @@ backend-architect	agent	architecture
 backport-review-fix-into-plan-of-record	skill	git
 brand-guardian	agent	frontend
 caveman	skill	authoring
-ci-triage	agent	devops
 code-architect	agent	architecture,code
 code-quality-reviewer	agent	code
 code-team	skill	code

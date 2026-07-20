@@ -36,7 +36,7 @@ To uninstall, delete the symlinks it made from `~/.claude/skills/` and `~/.claud
 <!-- INSIDE:BEGIN -->
 ## What's inside
 
-28 skills and 27 agents, grouped by discipline. Install one with `bash install.sh --bundle <name>`.
+28 skills and 26 agents, grouped by discipline. Install one with `bash install.sh --bundle <name>`.
 
 ### `ai`
 - **ai-engineer** (agent) — Practical ML/AI implementation specialist — LLM integration, RAG, recommendation/vision systems, model serving, and cost-optimised inference. Builds production-grade intelligent features from a spec for any AI stack.
@@ -81,7 +81,6 @@ To uninstall, delete the symlinks it made from `~/.claude/skills/` and `~/.claud
 ### `devops`
 - **ghcr-first-push-403-seed-and-link** (skill) — Use when a CI build succeeds but the GHCR push fails 403 Forbidden for a service whose package never existed, on a personal (non-org) account. Default GITHUB_TOKEN can push to existing packages but can't create one on first push. Gives the seed-and-link remediation.
 - **grill-brainstorm-build** (skill) — Use when the user wants to go from a rough idea to implementation, running through interrogation, options exploration, and build in one flow. Triggers on "grill me then build", "design-to-build", or "think it through then implement".
-- **ci-triage** (agent) — Given a failing CI run or red PR check, classify it as transient / pre-existing / real and recommend the action — by applying the repo's CI-triage playbooks in an isolated context. Returns a verdict, not a fix.
 - **devops-engineer** (agent) — Use when building or automating CI/CD pipelines, infrastructure-as-code, containers, or deployment workflows — DevOps/platform engineer — CI/CD pipelines, IaC (Terraform/Pulumi/Ansible), Docker/Kubernetes, deployment strategies (blue-green/canary/rolling), monitoring & observability, and cloud cost/reliability. Builds and automates production infrastructure for any stack.
 - **n8n-workflow-builder** (agent) — n8n automation specialist — designs, builds, validates, and deploys n8n workflows using the n8n-MCP tooling, validation-first (discover → configure → pre-validate → build → validate → deploy). For self-hosted n8n; also useful as a data-ingestion/automation builder.
 
