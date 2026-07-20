@@ -2,7 +2,7 @@
 name: skill-builder
 public: true
 bundles: [authoring]
-description: Use when creating a new skill from scratch — runs a discovery interview then builds the SKILL.md in the right category/format. For auditing existing skills use audit-skills instead.
+description: Use when creating a new skill from scratch — runs a discovery interview then builds the SKILL.md in the right category/format. For auditing existing skills use library-audit instead.
 disable-model-invocation: true
 ---
 
@@ -14,8 +14,9 @@ Guides the creation and optimization of Claude Code skills using official best p
 - Deciding on advanced features (subagent execution, hooks, dynamic context, etc.)
 - Troubleshooting a skill that isn't working correctly
 
-To **audit or optimise an existing skill**, use the `audit-skills` skill instead — it
-owns the per-skill checklist and library-wide visibility/determinism review.
+To **audit or optimise an existing skill**, use the `library-audit` skill instead — it
+owns the per-skill hygiene lenses (visibility / determinism / composability) and the
+library-wide review.
 
 For frontmatter fields and advanced patterns, follow the official Claude Code skills
 documentation (the `claude-code-guide` agent can answer specifics).
@@ -150,7 +151,7 @@ deploy step (`scripts/install.sh`) fans skills out to `~/.claude/`.
 1. **Natural language** -- Say something matching the description. Check if Claude loads it.
 2. **Direct invocation** -- Run `/skill-name` with test arguments.
 
-To **audit** the result, hand off to the `audit-skills` skill.
+To **audit** the result, hand off to the `library-audit` skill.
 
 ---
 

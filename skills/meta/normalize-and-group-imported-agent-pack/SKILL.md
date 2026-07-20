@@ -2,7 +2,7 @@
 name: normalize-and-group-imported-agent-pack
 public: true
 bundles: [authoring]
-description: Use when handed a batch of imported subagent .md files (e.g. agent-studio / B2B "agent packs") to integrate into this repo — strip studio/B2B frontmatter to clean name/description/model, decide merge-vs-keep-vs-drop against the existing roster, group keepers into an advisory-first domain "team" SKILL with model-tiering + adaptive selection + keyword hooks, then update the README catalogue and run install.sh. Distinct from skill-builder (builds one skill via interview) and audit-skills (audits existing skills).
+description: Use when handed a batch of imported subagent .md files (e.g. agent-studio / B2B "agent packs") to integrate into this repo — strip studio/B2B frontmatter to clean name/description/model, decide merge-vs-keep-vs-drop against the existing roster, group keepers into an advisory-first domain "team" SKILL with model-tiering + adaptive selection + keyword hooks, then update the README catalogue and run install.sh. Distinct from skill-builder (builds one skill via interview) and library-audit (audits existing skills).
 disable-model-invocation: true
 scope: claude-config
 ---
@@ -15,7 +15,7 @@ Ingests a batch of externally-authored subagent `.md` files (typically
 "agent-studio" / B2B packs handed over in groups of 8–12) and folds them into
 this repo's `agents/` roster + `skills/<domain>/<domain>-team/` ecosystem.
 This is **agent/team plumbing**, not skill authoring — use `skill-builder` to
-write a single new skill from an interview, and `audit-skills` to review skills
+write a single new skill from an interview, and `library-audit` to review skills
 that already exist.
 
 The pipeline recurred identically across multiple packs, so the operations are
