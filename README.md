@@ -36,7 +36,7 @@ To uninstall, delete the symlinks it made from `~/.claude/skills/` and `~/.claud
 <!-- INSIDE:BEGIN -->
 ## What's inside
 
-28 skills and 26 agents, grouped by discipline. Install one with `bash install.sh --bundle <name>`.
+29 skills and 26 agents, grouped by discipline. Install one with `bash install.sh --bundle <name>`.
 
 ### `ai`
 - **ai-engineer** (agent) — Practical ML/AI implementation specialist — LLM integration, RAG, recommendation/vision systems, model serving, and cost-optimised inference. Builds production-grade intelligent features from a spec for any AI stack.
@@ -94,6 +94,7 @@ To uninstall, delete the symlinks it made from `~/.claude/skills/` and `~/.claud
 ### `git`
 - **backport-review-fix-into-plan-of-record** (skill) — Use when a per-task review during subagent-driven development catches and fixes a real bug in code that a plan-of-record authored — edit the plan itself to carry the fix, so a future plan re-run doesn't reinstate the same bug on top of the corrected tree.
 - **fix-blocker-rather-than-override** (skill) — Use when a pre-existing master CI gate is red and blocking your unrelated PR — decide between fix-the-blocker (compounds across all PRs) and admin-override (one-PR value + habit-debt)
+- **git-checkout-B-from-worktree-moves-a-foreign-checkouts-branch** (skill) — Use before running `git checkout -B <branch>` / `git branch -f` / `git reset --hard <ref>` on a SHARED branch name from inside a git worktree — `-B` force-moves the branch ref even when another checkout is sitting on it, silently rebasing that checkout's HEAD under a sister session and making its whole tree look staged. Also covers restoring it with `reset --soft`.
 - **mid-session-master-advance-rebase** (skill) — Use when `git diff origin/master..HEAD` (or main) shows files you never touched as DELETED/modified, yet `git status` is clean and `git log` shows only your commits — origin advanced past your fork point and the diff shows its new commits inverted. Fix with `git fetch && git rebase`.
 - **partial-stage-comingled-file-when-add-p-unavailable** (skill) — Use when you must commit ONLY your hunk of a tracked file that also carries another session's uncommitted edits, and `git add -p` is blocked (non-interactive harness) — stage exact content via a constructed blob + `git update-index`, leaving the foreign working-tree edits untouched.
 - **push-from-worktree-to-integrate-past-foreign-dirty-main** (skill) — Use when you need to integrate your finished branch but the shared main/master checkout holds a live sister session's UNCOMMITTED work — push your worktree branch straight to origin/main (or merge the PR from the worktree) instead of checkout/merge in the shared tree, after asserting your HEAD is an ancestor of origin/main AND the incoming diff has zero path-overlap with the sibling's WIP.

@@ -39,6 +39,34 @@ Only your hunk staged, foreign edits still dirty on disk → safe to `git commit
 - If a live session is *actively writing* the file (recent mtimes), prefer to wait or leave it — this mechanic is for stale/co-resident edits, not a race against a live writer.
 - Confirm no active concurrent writer first (mtimes idle, no live worktree) per preexisting lane worktree means occupied.
 
+## Sibling trap 1: `-m` must come BEFORE `--`
+
+```bash
+git commit -- path/to/file -m "msg"     # WRONG
+git commit -m "msg" -- path/to/file     # right
+```
+
+Everything after `--` is parsed as a literal **pathspec**, including `-m` and the
+message. Two outcomes, both seen:
+
+- **The lucky one** — it fails loudly: `error: pathspec '-m' did not match any file(s) known to git`
+- **The unlucky one** — on a busy shared tree it *succeeds* and commits **whatever
+  was already staged**. Verified in practice: this swept **18 foreign staged files
+  from a sister session** into an unrelated commit. Recovered with
+  `git reset --soft HEAD~1` (index verified byte-identical), then recommitted
+  correctly.
+
+## Sibling trap 2: `git add -u` on a shared tree
+
+`git add -u` stages **every** tracked modification in scope — including edits you
+did not make. Verified 2026-07-29: it pulled four of the operator's uncommitted
+files into an unrelated commit. Caught only by reading the staged diff before
+pushing, and split back out with `git reset --soft` + `git restore --staged`.
+
+**Rule for both traps: on a shared or busy tree, stage by explicit path and read
+`git diff --cached --name-status` before every commit.** The cost of checking is
+seconds; the cost of not checking is someone else's work in your commit.
+
 ## Related: a hook restages a file you didn't intend to commit
 
 A different mechanism produces the same "unwanted file in my commit" outcome: a

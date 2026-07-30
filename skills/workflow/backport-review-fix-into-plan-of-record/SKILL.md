@@ -37,6 +37,8 @@ In subagent-driven development the plan-of-record is executable: a task's implem
 | Fixing only the working tree | A plan re-run re-authors the original bug on top of your fix |
 | Leaving the fix as a prose "note" beside the buggy snippet | The implementer replays the code snippet, not the marginalia |
 | Backporting the fix but not its downstream uses | Cross-task drift — the corrected type mismatches later tasks that still reference the old shape |
+| Writing "worth a follow-up" / "noting for later" instead of backporting | **The follow-up is now.** Observed 2026-07-28: a review agent named this exact scenario in its own words, then flagged it instead of acting — and the plan still mandated the bug it had just fixed. Recognising the situation is not the same as fixing it. |
+| Backporting only the instance you were working on | Sweep every site the fix implies. In the same session one instance was correctly backported and a second, in the same plan, was left inverted. |
 
 ## Related
 

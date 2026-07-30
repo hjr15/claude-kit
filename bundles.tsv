@@ -22,6 +22,7 @@ fix-blocker-rather-than-override	skill	git
 frontend-developer	agent	frontend,mobile
 generator-oracle-zero-diff-verify	skill	debugging
 ghcr-first-push-403-seed-and-link	skill	devops
+git-checkout-B-from-worktree-moves-a-foreign-checkouts-branch	skill	git
 grill-brainstorm-build	skill	devops
 llm-evals-engineer	agent	ai
 mcp-overflow-delegate-summary	skill	authoring
