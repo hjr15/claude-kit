@@ -10,7 +10,7 @@ description: Use when you must commit ONLY your hunk of a tracked file that also
 ## When this fires
 You edited a tracked file (often a `MEMORY.md`, changelog, or shared config) and want to commit **only your** hunk — but `git status` shows the same file also carries **another session's uncommitted edits** you must not sweep in. The usual tool, `git add -p`, is interactive and this harness blocks interactive git. `git add <file>` would stage everything, including the foreign edits.
 
-This is the **single-file** case of git commit no pathspec sweeps staged index (which covers the easier whole-file / explicit-pathspec case).
+This is the **single-file** case of **the "bare `git commit` sweeps the staged index" trap** (which covers the easier whole-file / explicit-pathspec case).
 
 ## The mechanic
 Construct the exact content you want committed, hash it into a blob, and point the index at that blob — the working tree (with the foreign edits) is never touched:
@@ -37,7 +37,7 @@ Only your hunk staged, foreign edits still dirty on disk → safe to `git commit
 - **Never `git add <file>` / `git add -A` here** — that's the exact sweep you're avoiding.
 - **Keep every foreign card/file/pointer in the working tree.** You are isolating YOUR change, not resolving theirs.
 - If a live session is *actively writing* the file (recent mtimes), prefer to wait or leave it — this mechanic is for stale/co-resident edits, not a race against a live writer.
-- Confirm no active concurrent writer first (mtimes idle, no live worktree) per preexisting lane worktree means occupied.
+- Confirm no active concurrent writer first (mtimes idle, no live worktree).
 
 ## Sibling trap 1: `-m` must come BEFORE `--`
 

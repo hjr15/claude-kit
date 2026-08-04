@@ -59,14 +59,14 @@ All are read-only/advisory. Discard any code they sketch; keep it as a proposal.
 ## Phase 3 — Synthesize & Approve (the gate)
 In your own session: reconcile the perspectives (they will sometimes disagree —
 that's the point), pick the design, and bias to the **simpler alternative** per
-prefer simple solutions. Present it to the user with the trade-offs.
+**prefer simple over comprehensive**. Present it to the user with the trade-offs.
 
 **Capture ADRs here.** Anything that clears all three bars — hard to reverse,
 surprising without context, a real trade-off — becomes an ADR per
-check adr before architecture and app design decision needs adr.
+**the "check the ADRs before locking an approach" rule** and **the ADR-required rule for design decisions**.
 Don't manufacture an ADR for routine choices; instance config is not an ADR
-(adr framework not instance). Durable decisions also belong in
-long-lived docs (promote decisions to longlived docs).
+. Durable decisions also belong in
+long-lived docs.
 
 ## Phase 4 — Implement (separate, approved step)
 Hand the agreed design to the right executor — `backend-architect` for server

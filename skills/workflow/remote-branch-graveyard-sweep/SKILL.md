@@ -10,7 +10,7 @@ disable-model-invocation: true
 
 ## Overview
 
-A branch with unmerged commits is **not** automatically dead — its work may have been superseded on `main` via different SHAs (squash-merge, reimplementation). Verify the unique artifact landed before deleting, or you risk both losing real work and leaving a stale graveyard. Codifies superseded not merged verify artifact.
+A branch with unmerged commits is **not** automatically dead — its work may have been superseded on `main` via different SHAs (squash-merge, reimplementation). Verify the unique artifact landed before deleting, or you risk both losing real work and leaving a stale graveyard. Codifies **the "superseded, not dead" check**.
 
 ## When to use
 

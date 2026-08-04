@@ -43,8 +43,8 @@ One tool is the norm. Don't run all three for a small change.
 2. **Review (advisory)** — dispatch the selected tool(s); read-only. For a diff,
    `/code-review` first; layer `code-quality-reviewer` for maintainability depth.
 3. **Approve** — present findings, ranked, separating must-fix from nice-to-have
-   (prefer simple solutions — don't gold-plate). Structural decisions
-   may be ADR-worthy (check adr before architecture).
+   (**prefer simple over comprehensive** — don't gold-plate). Structural decisions
+   may be ADR-worthy.
 4. **Implement** — apply approved changes (the owning coder/team); process bar applies.
 5. **Verify** — re-review the changed surface; **hand to the testing-team** to prove
    behaviour is preserved (refactors must stay green); [[adversarial-verifier]] for
